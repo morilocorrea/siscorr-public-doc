@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Galeria WhatsApp</title>
+    <style>
+        :root {
+            --primary: #00342e;
+            --primary-container: #004d44;
+            --secondary: #006b5f;
+            --background: #f7f9fc;
+            --on-surface: #191c1e;
+            --on-surface-variant: #3f4945;
+            --surface-lowest: #ffffff;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--background);
+            color: var(--on-surface);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-container));
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+            border-bottom-left-radius: 48px;
+            border-bottom-right-radius: 48px;
+            box-shadow: 0 10px 30px rgba(0, 52, 46, 0.15);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 800px;
+            margin: -40px auto 60px;
+            padding: 0 24px;
+        }
+
+        .content-card {
+            background-color: var(--surface-lowest);
+            padding: 40px;
+            border-radius: 32px;
+            box-shadow: 0 4px 20px rgba(0, 52, 46, 0.05);
+        }
+
+        section {
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--secondary);
+            margin-right: 12px;
+            border-radius: 4px;
+        }
+
+        p, li {
+            color: var(--on-surface-variant);
+            font-size: 1rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            color: var(--on-surface-variant);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .last-update {
+            font-style: italic;
+            margin-top: 20px;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 20px;
+                border-radius: 0 0 32px 32px;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .content-card {
+                padding: 24px;
+                border-radius: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Galeria WhatsApp</h1>
+        <p>Curadoria de Mídias e Inteligência de Limpeza</p>
+    </header>
+
+    <main>
+        <div class="content-card">
+            <section>
+                <h2>1. Introdução</h2>
+                <p>O <strong>Galeria WhatsApp</strong>, desenvolvido pela <span class="highlight">SisCORR Desenvolvimento</span>, é um aplicativo de utilidade projetado para ajudar os usuários a organizar, visualizar e gerenciar arquivos de mídia (fotos, vídeos, áudios e documentos) provenientes de aplicativos de mensagens como WhatsApp, WhatsApp Business e GBWhatsApp.</p>
+                <p>Nossa prioridade é garantir a sua privacidade e a segurança dos seus arquivos.</p>
+            </section>
+
+            <section>
+                <h2>2. Coleta de Dados</h2>
+                <p>O Galeria WhatsApp é um aplicativo de <strong>processamento estritamente local</strong>. Isso significa que:</p>
+                <ul>
+                    <li>Não coletamos, enviamos ou armazenamos seus arquivos de mídia em nenhum servidor externo.</li>
+                    <li>O cálculo de assinaturas digitais (Hashes MD5) para identificação de duplicatas ocorre inteiramente dentro do seu dispositivo.</li>
+                    <li>Não coletamos informações de identificação pessoal (PII) nem dados de contatos.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Permissões de Acesso</h2>
+                <p>Para funcionar corretamente, o aplicativo solicita as seguintes permissões:</p>
+                <ul>
+                    <li><strong>Acesso Total ao Armazenamento (MANAGE_EXTERNAL_STORAGE):</strong> Necessário no Android 11+ para realizar a varredura profunda e a limpeza de arquivos nas pastas de mídia do WhatsApp.</li>
+                    <li><strong>Acesso à Galeria (Mídia):</strong> Necessário para abrir e exibir fotos e vídeos utilizando os visualizadores nativos do seu celular.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Segurança e Persistência</h2>
+                <p>Utilizamos a tecnologia <strong>ObjectBox</strong> para armazenar localmente os metadados das suas mídias (como caminhos de arquivos e datas), garantindo rapidez e eficiência. Estes dados nunca saem do seu dispositivo e são apagados caso o aplicativo seja desinstalado.</p>
+            </section>
+
+            <section>
+                <h2>5. Exclusão de Arquivos</h2>
+                <p>O aplicativo oferece ferramentas de <strong>Limpeza Inteligente</strong> e <strong>Remoção de Duplicatas</strong>. Ao utilizar essas funções, os arquivos selecionados são excluídos permanentemente do armazenamento físico do dispositivo. O Galeria WhatsApp solicita confirmações explícitas antes de qualquer exclusão definitiva.</p>
+            </section>
+
+            <section>
+                <h2>6. Serviços de Terceiros</h2>
+                <p>O aplicativo pode utilizar bibliotecas padrão do ecossistema Flutter para exibição de fontes (Google Fonts) e ícones. Nenhum dado pessoal é compartilhado com esses serviços durante o uso offline do aplicativo.</p>
+            </section>
+
+            <section>
+                <h2>7. Alterações nesta Política</h2>
+                <p>Podemos atualizar nossa Política de Privacidade ocasionalmente. Recomendamos que você revise esta página periodicamente para quaisquer alterações.</p>
+            </section>
+
+            <section>
+                <h2>8. Contato</h2>
+                <p>Se você tiver alguma dúvida ou sugestão sobre nossa Política de Privacidade, não hesite em nos contatar em:</p>
+                <p class="highlight">suportesiscorr@gmail.com.br</p>
+
+                <span class="last-update">Última atualização: Abril de 2026</span>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 SisCORR Desenvolvimento. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>
