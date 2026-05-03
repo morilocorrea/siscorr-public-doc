@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Private Notes</title>
+    <style>
+        :root {
+            --uber-black: #000000;
+            --pure-white: #ffffff;
+            --body-gray: #4b4b4b;
+            --muted-gray: #afafaf;
+            --chip-gray: #efefef;
+            --hover-gray: #e2e2e2;
+            --shadow-light: rgba(0, 0, 0, 0.12);
+            --radius-pill: 999px;
+            --radius-card: 8px;
+        }
+
+        body {
+            font-family: 'UberMoveText', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--pure-white);
+            color: var(--uber-black);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background-color: var(--uber-black);
+            color: var(--pure-white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'UberMove', system-ui, sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: var(--pure-white);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-light) 0px 4px 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-family: 'UberMove', system-ui, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--uber-black);
+            padding-left: 16px;
+        }
+
+        p, li {
+            color: var(--body-gray);
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .pill-badge {
+            display: inline-block;
+            color: var(--pure-white);
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 16px;
+            opacity: 0.85;
+        }
+
+        footer {
+            background-color: var(--uber-black);
+            color: var(--muted-gray);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            color: var(--muted-gray);
+        }
+
+        .highlight {
+            color: var(--uber-black);
+            font-weight: 600;
+        }
+
+        footer .highlight {
+            color: var(--pure-white);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Private Notes</h1>
+        <div class="pill-badge">Soberania de Dados & Privacidade Absoluta</div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>1. Compromisso com a Privacidade</h2>
+            <p>O <span class="highlight">Private Notes</span>, desenvolvido pela <span class="highlight">SisCORR Desenvolvimento</span>, foi construído sob o princípio de que suas notas são propriedade sua, e de mais ninguém. Nosso modelo é <span class="highlight">offline-first</span>, o que significa que seus dados residem primariamente no seu dispositivo físico.</p>
+        </div>
+
+        <div class="card">
+            <h2>2. Coleta de Dados</h2>
+            <p>Não coletamos, processamos ou armazenamos suas notas em servidores próprios. O aplicativo funciona de forma autônoma e não possui contas de usuário vinculadas ao nosso serviço. Todas as informações criadas por você (texto, tags, preferências) permanecem cifradas no banco de dados local do seu aparelho.</p>
+        </div>
+
+        <div class="card">
+            <h2>3. Sincronização em Nuvem</h2>
+            <p>Para garantir que você possa restaurar seus dados ou sincronizá-los entre dispositivos, oferecemos integração com o <span class="highlight">Google Drive</span>. No entanto, operamos de forma restrita:</p>
+            <ul>
+                <li>Utilizamos o escopo <strong>appDataFolder</strong>, uma pasta oculta e privada no seu Drive que apenas o Private Notes pode acessar.</li>
+                <li>Nós nunca temos acesso aos seus outros arquivos pessoais no Google Drive.</li>
+                <li>O backup é um arquivo ZIP gerado localmente e enviado diretamente para a sua conta Google, sem intermediários.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>4. Segurança Local</h2>
+            <p>O aplicativo suporta autenticação biométrica (digital ou reconhecimento facial) ou PIN do sistema através da API nativa <span class="highlight">local_auth</span>. Esse processo é gerenciado inteiramente pelo seu sistema operacional; o aplicativo nunca recebe ou armazena suas credenciais biométricas.</p>
+        </div>
+
+        <div class="card">
+            <h2>5. Permissões Solicitadas</h2>
+            <ul>
+                <li><strong>Identidade (Google Sign-In):</strong> Necessária apenas para autenticar sua conta Google e permitir a sincronização com o Drive.</li>
+                <li><strong>Biometria:</strong> Utilizada para proteger o acesso à área de "Notas Protegidas" (Cofre).</li>
+                <li><strong>Internet:</strong> Necessária exclusivamente para a comunicação direta entre o seu dispositivo e os servidores do Google Drive durante o backup/restauração.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>6. Terceiros</h2>
+            <p>O único serviço de terceiros utilizado é o Google (via Google Sign-In e Google Drive API). Recomendamos que você revise a política de privacidade do Google para entender como eles gerenciam os dados em sua conta.</p>
+        </div>
+
+        <div class="card">
+            <h2>7. Alterações</h2>
+            <p>Esta política pode ser atualizada ocasionalmente para refletir melhorias no app. Como não possuímos seus dados de contato, recomendamos revisar esta página periodicamente através das configurações do aplicativo.</p>
+        </div>
+
+        <div class="card">
+            <h2>8. Contato</h2>
+            <p>Se você tiver alguma dúvida ou sugestão sobre nossa Política de Privacidade, não hesite em nos contatar em:</p>
+            <p><span class="highlight">suportesiscorr@gmail.com.br</span></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Private Notes - Minimalismo, Segurança e Liberdade.</p>
+        <p><span class="highlight">SisCORR Desenvolvimento</span></p>
+    </footer>
+
+</body>
+</html>
