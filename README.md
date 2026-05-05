@@ -2,3 +2,5 @@
 https://morilocorrea.github.io/siscorr-public-doc/cleaner-for-whatsapp-privacy-policy.html
 
 https://morilocorrea.github.io/siscorr-public-doc/private-notes-privacy-policy.html
+
+https://morilocorrea.github.io/siscorr-public-doc/rastro-sro-privacy-policy.html
