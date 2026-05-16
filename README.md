@@ -1,9 +1,9 @@
 # SisCORR Desenvolvimento
 
-https://morilocorrea.github.io/siscorr-public-doc/cleaner-for-whatsapp-privacy-policy.html
+https://morilocorrea.github.io/cleaner-for-whatsapp-privacy-policy.html
 
-https://morilocorrea.github.io/siscorr-public-doc/private-notes-privacy-policy.html
+https://morilocorrea.github.io/private-notes-privacy-policy.html
 
-https://morilocorrea.github.io/siscorr-public-doc/rastro-sro-privacy-policy.html
+https://morilocorrea.github.io/private-tasks-privacy-policy.html
 
-https://morilocorrea.github.io/siscorr-public-doc/app-ads.txt
+https://morilocorrea.github.io/rastro-sro-privacy-policy.html
