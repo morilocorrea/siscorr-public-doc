@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Private Tasks</title>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colors */
+            --primary: #001125;
+            /* Obsidian Navy */
+            --background: #ffffff;
+            --surface-level-1: #fbf9fb;
+            --surface-level-2: #f5f3f6;
+            --on-primary: #ffffff;
+            --text-main: #0b1c30;
+            --text-variant: #44474d;
+            --semantic-error: #cf202f;
+
+            /* Spacing & Geometry */
+            --radius-card: 24px;
+            --radius-header: 40px;
+            --radius-pill: 9999px;
+            --spacing-unit: 8px;
+            --padding-card: 32px;
+            --section-gap: 64px;
+
+            /* Shadows */
+            --shadow-subtle: 0px 8px 24px rgba(0, 17, 37, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            padding: 64px 20px 80px;
+            text-align: center;
+            border-bottom-left-radius: var(--radius-header);
+            border-bottom-right-radius: var(--radius-header);
+            margin-bottom: var(--section-gap);
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.01em;
+            line-height: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px var(--section-gap);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 20px var(--section-gap);
+            }
+        }
+
+        .card {
+            background: var(--surface-level-2);
+            border-radius: var(--radius-card);
+            padding: var(--padding-card);
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 16px;
+            line-height: 32px;
+            color: var(--primary);
+        }
+
+        p,
+        li {
+            color: var(--text-variant);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        p:last-child,
+        ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .pill-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--on-primary);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: var(--radius-pill);
+            margin-top: 24px;
+        }
+
+        footer {
+            background-color: var(--surface-level-1);
+            color: var(--text-variant);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid var(--surface-level-2);
+        }
+
+        footer p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Private Tasks</h1>
+        <div class="pill-badge">Produtividade Local & Privacidade</div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>1. Compromisso com a Privacidade</h2>
+            <p>O <span class="highlight">Private Tasks</span>, desenvolvido pela <span class="highlight">SisCORR
+                    Desenvolvimento</span>, foi criado sob o princípio de que sua lista de tarefas e produtividade são
+                assuntos privados. Nosso modelo é <span class="highlight">local-first</span>, o que significa que seus
+                dados são salvos primariamente no seu próprio dispositivo físico, sem a necessidade de criação de contas
+                no nosso serviço.</p>
+        </div>
+
+        <div class="card">
+            <h2>2. Coleta e Armazenamento de Dados</h2>
+            <p>Não coletamos, processamos ou armazenamos suas tarefas em servidores próprios. O aplicativo funciona de
+                forma autônoma. Todas as informações criadas por você (títulos de tarefas, anotações, datas de
+                conclusão) permanecem no banco de dados local do seu aparelho.</p>
+        </div>
+
+        <div class="card">
+            <h2>3. Sincronização em Nuvem (Backup)</h2>
+            <p>Para garantir que você não perca seus dados ao trocar de aparelho, oferecemos integração opcional com o
+                <span class="highlight">Google Drive</span>. Ao utilizar essa função:</p>
+            <ul>
+                <li>Utilizamos o escopo <strong>appDataFolder</strong>, uma pasta invisível e dedicada no seu Google
+                    Drive que apenas o Private Tasks pode acessar.</li>
+                <li>Nós nunca temos acesso aos seus outros arquivos pessoais armazenados no Drive.</li>
+                <li>O backup é gerado localmente e enviado diretamente do seu aparelho para a sua conta Google, de forma
+                    transparente.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>4. Publicidade e Monetização</h2>
+            <p>Para manter o aplicativo gratuito, exibimos anúncios fornecidos pelo <span class="highlight">Google
+                    AdMob</span>. Sendo assim, algumas informações podem ser coletadas pelos serviços de publicidade:
+            </p>
+            <ul>
+                <li><strong>Identificador de Publicidade (Ad ID):</strong> Utilizado pelo Google para fornecer anúncios
+                    relevantes e evitar fraudes.</li>
+                <li>Cookies ou tecnologias semelhantes podem ser utilizados pelas redes de publicidade para personalizar
+                    a experiência do anúncio.</li>
+                <li>O Private Tasks em si não compartilha o conteúdo das suas tarefas com redes de anúncios; apenas os
+                    identificadores de dispositivo padrão são acessados pelo SDK do AdMob.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>5. Permissões Solicitadas</h2>
+            <ul>
+                <li><strong>Internet:</strong> Necessária para a comunicação direta com o Google Drive
+                    (backup/restauração) e para o carregamento de banners publicitários do AdMob.</li>
+                <li><strong>Identidade (Google Sign-In):</strong> Necessária apenas se você optar por usar o backup no
+                    Google Drive.</li>
+                <li><strong>ID de Publicidade (AD_ID):</strong> Permissão técnica padrão exigida para carregar e exibir
+                    anúncios através da rede do Google em dispositivos modernos.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>6. Serviços de Terceiros</h2>
+            <p>O aplicativo utiliza serviços providos pelo Google, incluindo <span class="highlight">Google
+                    Sign-In</span>, <span class="highlight">Google Drive API</span> e <span class="highlight">Google
+                    AdMob</span>. Recomendamos que você revise a política de privacidade do Google para compreender como
+                seus dados e identificadores são tratados por eles.</p>
+        </div>
+
+        <div class="card">
+            <h2>7. Alterações na Política</h2>
+            <p>Esta política pode ser atualizada ocasionalmente para refletir melhorias no app ou novas exigências
+                legais. Como não possuímos banco de dados de usuários, recomendamos revisar esta página periodicamente.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>8. Contato</h2>
+            <p>Se você tiver alguma dúvida ou sugestão sobre nossa Política de Privacidade, não hesite em nos contatar
+                através do e-mail:</p>
+            <p><a href="mailto:suportesiscorr@gmail.com.br" class="highlight">suportesiscorr@gmail.com.br</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Private Tasks - Controle absoluto da sua produtividade.</p>
+        <p><span class="highlight">SisCORR Desenvolvimento</span></p>
+    </footer>
+
+</body>
+
+</html>
