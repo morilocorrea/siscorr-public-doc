@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Política de Privacidade — CodeLab</title>
+    <meta name="description" content="Política de Privacidade do aplicativo CodeLab da SisCORR Desenvolvimento. Saiba como seus dados de QR Code e códigos de barra são protegidos com criptografia local e sincronização opcional no Google Drive.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SisCORR Desenvolvimento">
+    
+    <!-- Google Fonts: Inter e Plus Jakarta Sans para máxima elegância tipográfica -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           DESIGN SYSTEM: MIRO BRAND PALETTE & CUSTOM COMPONENT TOKENS
+           ========================================================================== */
+        :root {
+            /* Cores de Marca */
+            --color-primary: #1C1C1E;          /* Charcoal escuro/quase preto */
+            --color-brand-yellow: #FFD02F;     /* Amarelo principal Miro */
+            --color-brand-yellow-deep: #FCB900;/* Amarelo escuro */
+            --color-brand-blue: #4262FF;       /* Azul elétrico vibrante */
+            --color-brand-teal: #0FBCB0;       /* Verde azulado */
+            --color-brand-coral: #FF9999;      /* Coral suave */
+            
+            /* Tons Pastel e Superfícies */
+            --color-canvas: #F7F8FA;           /* Fundo geral claro */
+            --color-surface-soft: #FAFBCF;     /* Fundo de destaque alternativo */
+            --color-surface-white: #FFFFFF;    /* Fundo dos cartões e elementos */
+            
+            /* Linhas e Divisores */
+            --color-hairline: #E0E2E8;         /* Bordas padrão */
+            --color-hairline-soft: #EEF0F3;    /* Bordas suaves secundárias */
+            --color-hairline-strong: #C7CAD5;  /* Bordas mais marcadas */
+            
+            /* Tipografia e Textos */
+            --color-ink: #1C1C1E;              /* Cor de texto principal */
+            --color-slate: #555A6A;            /* Texto secundário */
+            --color-steel: #6B6F7E;            /* Texto de apoio */
+            
+            /* Fontes */
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            
+            /* Transições */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==========================================================================
+           ESTILOS GERAIS DE RESET E LAYOUT
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-canvas);
+            color: var(--color-ink);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ==========================================================================
+           HEADER / HERO BANNER (Estilo Premium Tech com Mesh Gradient sutil)
+           ========================================================================== */
+        header {
+            position: relative;
+            background-color: var(--color-primary);
+            color: white;
+            padding: 80px 24px 120px;
+            text-align: center;
+            border-bottom-left-radius: 48px;
+            border-bottom-right-radius: 48px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(28, 28, 30, 0.15);
+        }
+
+        /* Efeito de brilho de gradiente sutil de fundo */
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(66, 98, 255, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255, 208, 47, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(8px);
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--color-brand-yellow);
+            text-transform: uppercase;
+        }
+
+        header .logo-badge svg {
+            fill: var(--color-brand-yellow);
+            width: 18px;
+            height: 18px;
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        header h1 span {
+            color: var(--color-brand-yellow);
+        }
+
+        header p {
+            font-size: 1.15rem;
+            color: #A2A5B5;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* ==========================================================================
+           GRID LAYOUT PRINCIPAL (Sidebar Sticky + Conteúdo)
+           ========================================================================== */
+        .container {
+            max-width: 1200px;
+            margin: -60px auto 80px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* ==========================================================================
+           SIDEBAR DE NAVEGAÇÃO RAPIDA (Sticky Menu)
+           ========================================================================== */
+        aside {
+            position: sticky;
+            top: 24px;
+            height: fit-content;
+            background-color: var(--color-surface-white);
+            border: 1px solid var(--color-hairline);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        aside h3 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-steel);
+            margin-bottom: 8px;
+            padding-left: 8px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            color: var(--color-slate);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+
+        .nav-links a svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            opacity: 0.7;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            background-color: #F0F3FF;
+            color: var(--color-brand-blue);
+            padding-left: 16px;
+        }
+
+        .nav-links a:hover svg {
+            fill: var(--color-brand-blue);
+            opacity: 1;
+        }
+
+        /* ==========================================================================
+           CARTÃO DE CONTEÚDO PRINCIPAL
+           ========================================================================== */
+        main {
+            background-color: var(--color-surface-white);
+            border: 1px solid var(--color-hairline);
+            border-radius: 32px;
+            padding: 56px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .meta-info-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--color-canvas);
+            border: 1px solid var(--color-hairline-soft);
+            padding: 16px 24px;
+            border-radius: 16px;
+            margin-bottom: 48px;
+        }
+
+        .meta-item {
+            font-size: 0.85rem;
+            color: var(--color-slate);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .meta-item svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--color-brand-blue);
+        }
+
+        .meta-badge {
+            background-color: #E2FFFA;
+            color: #0E8E84;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(15, 188, 176, 0.2);
+        }
+
+        /* ==========================================================================
+           ESTILIZAÇÃO DOS TÓPICOS/SEÇÕES
+           ========================================================================== */
+        section {
+            scroll-margin-top: 40px;
+            margin-bottom: 48px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--color-hairline-soft);
+            transition: var(--transition-smooth);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        section h2 {
+            font-family: var(--font-display);
+            color: var(--color-primary);
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* Ícone redondo premium na frente do título */
+        .section-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: #F0F2F6;
+            border-radius: 12px;
+            color: var(--color-primary);
+            flex-shrink: 0;
+            transition: var(--transition-smooth);
+            border: 1px solid var(--color-hairline);
+        }
+
+        .section-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Efeito interativo ao passar o mouse na seção */
+        section:hover .section-icon {
+            background-color: var(--color-primary);
+            color: var(--color-brand-yellow);
+            border-color: var(--color-primary);
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        section p {
+            color: var(--color-slate);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        section strong {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           LISTAS E DESTAQUES INTERNOS
+           ========================================================================== */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 28px;
+            color: var(--color-slate);
+            font-size: 1.02rem;
+            line-height: 1.6;
+        }
+
+        /* Bullet personalizado usando SVG via pseudo-elemento ou máscara */
+        li::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            background-color: var(--color-brand-blue);
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") no-repeat center;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") no-repeat center;
+            mask-size: contain;
+            -webkit-mask-size: contain;
+        }
+
+        /* Destaque com visual de Sticky Note / Feature Card pastel da Miro */
+        .callout-box {
+            background-color: var(--color-canvas);
+            border: 1px solid var(--color-hairline);
+            border-left: 4px solid var(--color-brand-blue);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .callout-box.security {
+            border-left-color: var(--color-brand-teal);
+            background-color: #F2FCFA;
+            border-color: rgba(15, 188, 176, 0.15);
+        }
+
+        .callout-box h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .callout-box h4 svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--color-brand-teal);
+        }
+
+        .callout-box p {
+            font-size: 0.98rem;
+            margin-bottom: 0;
+            color: var(--color-slate);
+        }
+
+        .highlight-blue {
+            color: var(--color-brand-blue);
+            font-weight: 600;
+        }
+
+        .highlight-teal {
+            color: var(--color-brand-teal);
+            font-weight: 600;
+        }
+
+        /* Estilo da área de e-mail de suporte */
+        .contact-box {
+            background-color: #FFFCEB;
+            border: 1px dashed var(--color-brand-yellow-deep);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .contact-box p {
+            margin-bottom: 12px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            background-color: var(--color-brand-yellow);
+            padding: 8px 24px;
+            border-radius: 100px;
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(255, 208, 47, 0.2);
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 208, 47, 0.35);
+            background-color: var(--color-brand-yellow-deep);
+        }
+
+        /* ==========================================================================
+           FOOTER DA PÁGINA
+           ========================================================================== */
+        footer {
+            background-color: var(--color-primary);
+            color: #A2A5B5;
+            text-align: center;
+            padding: 60px 24px;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer .developer-name {
+            color: white;
+            font-weight: 600;
+            font-family: var(--font-display);
+        }
+
+        footer .copyright {
+            font-size: 0.85rem;
+            color: var(--color-steel);
+            margin-top: 16px;
+        }
+
+        /* Botão sutil de voltar ao topo no footer */
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 32px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition-smooth);
+        }
+
+        .back-to-top:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-brand-yellow);
+            border-color: var(--color-brand-yellow);
+        }
+
+        .back-to-top svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        /* ==========================================================================
+           MEDIA QUERIES (Responsividade Completa)
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: relative;
+                top: 0;
+                order: 2;
+                margin-top: -20px;
+            }
+
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            main {
+                order: 1;
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 60px 20px 90px;
+                border-radius: 0 0 32px 32px;
+            }
+
+            header h1 {
+                font-size: 2.1rem;
+            }
+
+            .container {
+                margin-top: -40px;
+                padding: 0 16px;
+            }
+
+            main {
+                padding: 32px 20px;
+                border-radius: 24px;
+            }
+
+            .meta-info-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 16px;
+            }
+
+            section h2 {
+                font-size: 1.35rem;
+                gap: 12px;
+            }
+
+            .section-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+            }
+
+            .section-icon svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho Principal (Header) -->
+    <header>
+        <div class="header-content">
+            <div class="logo-badge">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4h6v6H4V4zm2 2v2h2V6H6zm0 12h2v-2H6v2zm-2 2h6v-6H4v6zm14-2h2v-2h-2v2zm0-4h2V8h-2v4zm-4-4h2V6h-2v2zm6-4h-6v6h6V4zm-2 2v2h-2V6h2zM6 14h2v-2H6v2zm12 6h2v-2h-2v2zm-4-2h2v-4h-2v4zm0-6h2v-2h-2v2zm0 8h2v-2h-2v2zm4-4h2v-2h-2v2z"/>
+                </svg>
+                CodeLab App
+            </div>
+            <h1>Política de <span>Privacidade</span></h1>
+            <p>Seu assistente premium para leitura e geração de códigos de barra e QR Codes, com foco total em privacidade.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navegação Rápida Sticky (Sidebar) -->
+        <aside>
+            <h3>Tópicos</h3>
+            <ul class="nav-links">
+                <li><a href="#introducao">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    Introdução
+                </a></li>
+                <li><a href="#coleta-local">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7v3H6c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5zm-3 8V7c0-1.66 1.34-3 3-3s3 1.34 3 3v3H9z"/></svg>
+                    Processamento Local
+                </a></li>
+                <li><a href="#backup-nuvem">
+                    <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z"/></svg>
+                    Backup em Nuvem
+                </a></li>
+                <li><a href="#permissoes">
+                    <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    Permissões
+                </a></li>
+                <li><a href="#terceiros">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+                    Terceiros
+                </a></li>
+                <li><a href="#controle-exclusao">
+                    <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                    Controle de Dados
+                </a></li>
+                <li><a href="#alteracoes">
+                    <svg viewBox="0 0 24 24"><path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 2.24-.83 4.87-2.75 6.79-3.77 3.75-9.83 3.75-13.6 0s-3.77-9.83 0-13.59 9.83-3.75 13.6 0l2.75-2.75V10.12z"/></svg>
+                    Alterações
+                </a></li>
+                <li><a href="#contato">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Contato
+                </a></li>
+            </ul>
+        </aside>
+
+        <!-- Cartão de Conteúdo Principal (Main) -->
+        <main>
+
+            <!-- Seção 1: Introdução -->
+            <section id="introducao">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    </span>
+                    1. Introdução
+                </h2>
+                <p>O <strong>CodeLab</strong>, desenvolvido pela <span class="highlight-blue">SisCORR Desenvolvimento</span>, é um utilitário completo projetado para permitir que os usuários escaneiem, gerem, organizem e favoritem QR Codes e Códigos de Barra com rapidez e precisão.</p>
+                <p>Nossa premissa fundamental é a <strong class="highlight-teal">privacidade e soberania dos seus dados</strong>. Acreditamos que o que você escaneia ou cria pertence exclusivamente a você. Por isso, toda a lógica do aplicativo foi concebida sob o paradigma de processamento e armazenamento prioritariamente local.</p>
+            </section>
+
+            <!-- Seção 2: Processamento e Armazenamento Local -->
+            <section id="coleta-local">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7v3H6c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5zm-3 8V7c0-1.66 1.34-3 3-3s3 1.34 3 3v3H9z"/></svg>
+                    </span>
+                    2. Armazenamento Local e Criptografia
+                </h2>
+                <p>O CodeLab funciona no modelo <strong>offline-first</strong>. Os seus dados são armazenados diretamente na memória do seu dispositivo eletrônico:</p>
+                <ul>
+                    <li>Não enviamos o seu histórico de leituras, categorias, favoritos ou códigos gerados para nenhum servidor de nossa propriedade ou de terceiros.</li>
+                    <li>Todo o processamento de imagens e conversão de QR Codes/Códigos de Barra ocorre inteiramente dentro do hardware do seu dispositivo, sem necessidade de internet para a decodificação ou codificação básica.</li>
+                    <li>Não coletamos ou armazenamos informações de identificação pessoal (PII) adicionais do usuário.</li>
+                </ul>
+
+                <!-- Caixa de Destaque / Callout Box com a tecnologia SQLCipher -->
+                <div class="callout-box security">
+                    <h4>
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                        Segurança Adicional (Drift + SQLCipher)
+                    </h4>
+                    <p>Para garantir que ninguém com acesso físico ou malware no seu dispositivo possa visualizar seu histórico e dados pessoais, as informações locais do aplicativo são salvas usando a tecnologia <strong>Drift</strong> com persistência criptografada em repouso via <strong>SQLCipher</strong>.</p>
+                </div>
+            </section>
+
+            <!-- Seção 3: Backup e Sincronização em Nuvem -->
+            <section id="backup-nuvem">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z"/></svg>
+                    </span>
+                    3. Sincronização e Backup Opcional na Nuvem
+                </h2>
+                <p>O aplicativo oferece uma funcionalidade de backup de dados que permite ao usuário sincronizar seu histórico e favoritos entre dispositivos. O uso deste serviço é <strong>100% opcional</strong> e se baseia na infraestrutura da própria conta do usuário:</p>
+                <ul>
+                    <li><strong>Google Sign-In e Google Drive API:</strong> O CodeLab autentica o usuário via login com a conta Google para estabelecer conexão criptografada diretamente com o Google Drive do usuário.</li>
+                    <li><strong>Pasta Reservada (appDataFolder):</strong> O backup é armazenado em uma partição oculta do Google Drive, de uso exclusivo para o aplicativo (denominada <i>Application Data Folder</i>). Esta pasta é isolada, o que significa que nenhum outro aplicativo e nem mesmo você (através da interface padrão do Google Drive) pode ver estes arquivos, evitando exclusão ou alteração acidental de dados.</li>
+                    <li><strong>Sem Acesso por Nós:</strong> A SisCORR Desenvolvimento não tem acesso ao banco de dados na nuvem, às suas credenciais de e-mail ou a qualquer outro conteúdo do seu Google Drive. Toda a autenticação e transmissão de dados ocorrem de forma segura entre a API nativa da Google e o seu dispositivo móvel.</li>
+                </ul>
+            </section>
+
+            <!-- Seção 4: Permissões Requeridas -->
+            <section id="permissoes">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    </span>
+                    4. Permissões Requeridas
+                </h2>
+                <p>Para fornecer suas principais funcionalidades, o CodeLab precisa solicitar as seguintes permissões operacionais do seu sistema:</p>
+                <ul>
+                    <li><strong>Câmera:</strong> Necessária para capturar a imagem da lente do dispositivo e realizar o escaneamento de QR Codes e Códigos de Barra. O aplicativo apenas analisa o feed de vídeo localmente de forma instantânea para identificar os códigos e não registra nem transmite as suas imagens/vídeos.</li>
+                    <li><strong>Conectividade com a Internet (Rede):</strong> Necessária apenas para sincronizar backups com o Google Drive (quando ativado voluntariamente) e carregar anúncios promocionais de provedores terceirizados (Google AdMob).</li>
+                </ul>
+            </section>
+
+            <!-- Seção 5: Serviços de Terceiros e Publicidade -->
+            <section id="terceiros">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+                    </span>
+                    5. Serviços de Terceiros
+                </h2>
+                <p>Para viabilizar a distribuição e o suporte gratuito do CodeLab, nós integramos ferramentas de parceiros que podem coletar dados básicos do dispositivo:</p>
+                <ul>
+                    <li><strong>Google AdMob (Anúncios):</strong> O aplicativo utiliza anúncios integrados fornecidos pela Google. O AdMob pode acessar identificadores de anúncios móveis exclusivos do seu dispositivo (como o ID de Publicidade do Android ou IDFA do iOS) para entregar anúncios mais relevantes, combater fraudes e monitorar o tráfego publicitário de forma agregada.</li>
+                    <li><strong>Serviços do Google Play (Google Sign-In e Drive):</strong> Utilizados para realizar a autenticação segura do usuário no aplicativo e permitir a transferência fluida de dados para a conta pessoal do Drive do usuário durante os backups.</li>
+                </ul>
+                <p>Estes serviços de terceiros seguem suas próprias Políticas de Privacidade independentes. Recomendamos a leitura da política do Google para compreender melhor como seus dados são geridos nas redes de anúncio e autenticação da empresa.</p>
+            </section>
+
+            <!-- Seção 6: Controle e Exclusão de Dados -->
+            <section id="controle-exclusao">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                    </span>
+                    6. Controle do Usuário e Exclusão de Dados
+                </h2>
+                <p>O usuário é o único detentor do controle das suas informações registradas no CodeLab:</p>
+                <ul>
+                    <li><strong>Exclusão Manual:</strong> É possível deletar qualquer QR Code ou código escaneado individualmente do seu histórico, remover pastas customizadas ou excluir integralmente todos os registros através do painel de configurações internas do aplicativo.</li>
+                    <li><strong>Sincronização da Exclusão:</strong> Se você ativou o backup em nuvem, a exclusão de um registro no aplicativo será sincronizada e apagada de forma idêntica do backup contido no Google Drive.</li>
+                    <li><strong>Desinstalação Completa:</strong> Caso decida desinstalar o CodeLab do seu celular ou tablet, o próprio sistema operacional excluirá de maneira imediata o banco de dados criptografado Drift do seu armazenamento local.</li>
+                </ul>
+            </section>
+
+            <!-- Seção 7: Alterações nesta Política -->
+            <section id="alteracoes">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 2.24-.83 4.87-2.75 6.79-3.77 3.75-9.83 3.75-13.6 0s-3.77-9.83 0-13.59 9.83-3.75 13.6 0l2.75-2.75V10.12z"/></svg>
+                    </span>
+                    7. Alterações nesta Política
+                </h2>
+                <p>Nós nos reservamos o direito de atualizar esta Política de Privacidade a qualquer momento para refletir novos recursos do aplicativo ou mudanças na legislação aplicável de proteção de dados. Quaisquer alterações serão indicadas através da atualização da data de modificação exibida no topo deste documento.</p>
+            </section>
+
+            <!-- Seção 8: Contato -->
+            <section id="contato">
+                <h2>
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </span>
+                    8. Contato
+                </h2>
+                <p>Se você tiver alguma dúvida sobre a nossa política ou sobre as práticas de privacidade adotadas pelo aplicativo, por favor entre em contato com nossa equipe de suporte:</p>
+                <div class="contact-box">
+                    <p>Suporte e Atendimento SisCORR Desenvolvimento</p>
+                    <a href="mailto:suportesiscorr@gmail.com.br" class="contact-email">suportesiscorr@gmail.com.br</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Rodapé (Footer) -->
+    <footer>
+        <a href="#introducao" class="back-to-top">
+            Voltar ao topo
+            <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+        </a>
+        <p>Desenvolvido por <span class="developer-name">SisCORR Desenvolvimento</span></p>
+    </footer>
+
+</body>
+</html>
