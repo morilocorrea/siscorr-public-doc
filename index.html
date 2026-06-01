@@ -137,7 +137,49 @@
                     </div>
                 </article>
 
-                <!-- CARD 2: Private Notes -->
+                <!-- CARD 2: Codelab -->
+                <article class="app-card reveal" id="app-codelab">
+                    <div>
+                        <div class="app-header">
+                            <div class="app-icon-wrapper">
+                                <!-- Ícone Real do Codelab da Google Play (Buscado via API da Play Store) -->
+                                <img class="app-icon" src="https://play-lh.googleusercontent.com/rNMEFxNMg8_tCibdxuSqFsi5XuGyo5XgjJz8SF4LiEmrWuSEOBMTIdBW7U2bU4OfVxA01JRCuq8N53HS7NilPQ" alt="Ícone Codelab">
+                            </div>
+                            <div class="app-title-box">
+                                <h3 class="app-title">Codelab</h3>
+                                <span class="app-badge">Produtividade</span>
+                            </div>
+                        </div>
+                        <p class="app-desc">
+                            Leitor e gerador de QR Code e código de barras offline-first. Digitalize e crie códigos com rapidez, segurança e mantenha seus registros salvos exclusivamente no seu dispositivo.
+                        </p>
+                        <ul class="app-features-list">
+                            <li>
+                                <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Leitor e gerador ágil de QR Codes e Códigos de Barras</span>
+                            </li>
+                            <li>
+                                <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Histórico local criptografado para total segurança</span>
+                            </li>
+                            <li>
+                                <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Sincronização e backup cifrados via Google Drive</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="app-action-bar">
+                        <a href="https://play.google.com/store/apps/details?id=com.siscorr.codelab" target="_blank" rel="noopener noreferrer" class="btn-playstore" id="btn-codelab-store">
+                            <svg class="btn-playstore-icon" viewBox="0 0 24 24">
+                                <path d="M5,2.56L15.34,12.9L5,23.24V2.56M16.76,14.32L20.07,12.4C21.15,11.78 21.15,10.22 20.07,9.6L16.76,7.68L15.71,12.53L16.76,14.32M5,2V2.5L14.9,12.4L18.17,9.13L5.3,1.7C5.18,1.63 5.09,1.63 5,2M5,23.63C5.09,23.63 5.18,23.63 5.3,23.56L18.17,16.13L14.9,12.86L5,23V23.63Z" />
+                            </svg>
+                            Instalar
+                        </a>
+                        <a href="./codelab-privacy-policy.html" class="link-privacy" id="link-codelab-privacy">Privacidade</a>
+                    </div>
+                </article>
+
+                <!-- CARD 3: Private Notes -->
                 <article class="app-card reveal" id="app-notes">
                     <div>
                         <div class="app-header">
@@ -179,7 +221,7 @@
                     </div>
                 </article>
 
-                <!-- CARD 3: Private Tasks -->
+                <!-- CARD 4: Private Tasks -->
                 <article class="app-card reveal" id="app-tasks">
                     <div>
                         <div class="app-header">
@@ -220,8 +262,6 @@
                         <a href="./private-tasks-privacy-policy.html" class="link-privacy" id="link-tasks-privacy">Privacidade</a>
                     </div>
                 </article>
-
-
             </div>
         </div>
     </section>
@@ -316,6 +356,7 @@
                 <li><a href="./cleaner-for-whatsapp-privacy-policy.html">Políticas Cleaner</a></li>
                 <li><a href="./private-notes-privacy-policy.html">Políticas Notes</a></li>
                 <li><a href="./private-tasks-privacy-policy.html">Políticas Tasks</a></li>
+                <li><a href="./codelab-privacy-policy.html">Políticas Codelab</a></li>
                 <li><a href="https://play.google.com/store/apps/developer?id=SisCORR+Desenvolvimento" target="_blank" rel="noopener noreferrer">Perfil Google Play</a></li>
             </ul>
             
@@ -352,7 +393,7 @@
             
             logDebug("Inicializando ecossistema SisCORR Desenvolvimento...");
             logDebug("Ambiente detectado: Windows 11 (PowerShell)");
-            logDebug("Total de apps listados: 3 (Cleaner, Notes, Tasks)");
+            logDebug("Total de apps listados: 4 (Cleaner, Notes, Tasks, Codelab)");
             
             // 1. Scroll Reveal - Revela elementos dinamicamente enquanto rola a tela
             const revealElements = document.querySelectorAll('.reveal');
